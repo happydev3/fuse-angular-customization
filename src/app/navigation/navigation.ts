@@ -23,7 +23,7 @@ export const navigation: FuseNavigation[] = [
                         id   : 'add',
                         title: 'Add',
                         type : 'item',
-                        url  : '/admiin/stock/add'
+                        url  : '/admin/stock/add'
                     }
                 ]
             },
@@ -43,13 +43,13 @@ export const navigation: FuseNavigation[] = [
                         id   : 'add',
                         title: 'Add',
                         type : 'item',
-                        url  : '/admiin/categories/add'
+                        url  : '/admin/categories/add'
                     }
                 ]
             },
             {
-                id       : 'demensions',
-                title    : 'Demensions',
+                id       : 'dimensions',
+                title    : 'Dimensions',
                 type     : 'collapsable',
                 icon     : 'check_box',
                 children : [
@@ -57,13 +57,13 @@ export const navigation: FuseNavigation[] = [
                         id   : 'view',
                         title: 'View',
                         type : 'item',
-                        url  : '/admin/demensions/view'
+                        url  : '/admin/dimensions/view'
                     },
                     {
                         id   : 'add',
                         title: 'Add',
                         type : 'item',
-                        url  : '/admiin/demensions/add'
+                        url  : '/admin/dimensions/add'
                     }
                 ]
             },
@@ -83,7 +83,7 @@ export const navigation: FuseNavigation[] = [
                         id   : 'add',
                         title: 'Add',
                         type : 'item',
-                        url  : '/admiin/attributes/add'
+                        url  : '/admin/attributes/add'
                     }
                 ]
             },
@@ -103,7 +103,7 @@ export const navigation: FuseNavigation[] = [
                         id   : 'add',
                         title: 'Add',
                         type : 'item',
-                        url  : '/admiin/stores/add'
+                        url  : '/admin/stores/add'
                     }
                 ]
             },
@@ -123,7 +123,7 @@ export const navigation: FuseNavigation[] = [
                         id   : 'add',
                         title: 'Add',
                         type : 'item',
-                        url  : '/admiin/products/add'
+                        url  : '/admin/products/add'
                     }
                 ]
             },

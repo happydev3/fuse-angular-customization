@@ -1,0 +1,72 @@
+.card-box {
+    background-image: url('/assets/images/client/card.png');
+    background-size: cover;
+    min-height: 450px;
+    background-color: white;
+    cursor: pointer;
+    z-index: 0;
+  
+    mat-card-header {
+      z-index: 2;
+      .card-header-image {
+        width: 100%;
+        display: flex;
+        margin-top: 20px;
+        justify-content: center;
+  
+        .category-image {
+          width: 150px;
+        }
+      }
+  
+      .card-header-title {
+        margin-top: 15px;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 25px;
+      }
+    }
+  
+    .card-body {
+      z-index: 2;
+      padding: 15px;
+    }
+  
+    mat-card-actions {
+      padding: 10px 20px;
+      background-color: rgb(223, 223, 223);
+      .card-footer-custom {
+        z-index: 2;
+        text-align: center;
+        display: flex;
+        text-transform: uppercase;
+        color: grey;
+  
+        .product-stocks {
+          background-color: #FAA61A;
+          border: 3px solid white;
+          width: 60px;
+          height: 60px;
+          margin-left: 20px !important;
+          margin-right: 20px !important;
+          border-radius: 30px;
+          color: white;
+          display: flex;
+          justify-content: center;
+          margin: auto;
+          margin-top: -40px;
+  
+          p {
+            margin-top: 15px;
+          }
+        }
+  
+        .footer-title {
+          font-size: 20px;
+          font-weight: 700;
+          color: black;
+        }
+      }
+    }
+  }
+  

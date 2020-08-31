@@ -1,0 +1,1 @@
+<p>stock works!</p>

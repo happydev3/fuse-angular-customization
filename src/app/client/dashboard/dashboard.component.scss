@@ -1,0 +1,102 @@
+.client-wrapper {
+    background-color: #FAA61A;
+    position: absolute;
+    width: 100%;
+    z-index: -1000;
+  
+    .background-image {
+      z-index: -999;
+      width: 100%;
+      position: absolute;
+      bottom: 20px;
+    }
+    .dashboard-wrapper {
+  
+      z-index: -998;
+      .dashboard-header {
+        margin-top: 50px;
+        .dashboard-title {
+          width: 100%;
+          font-weight: 600;
+          font-size: 45px;
+          color: white;
+          text-transform: uppercase;
+          text-align: center !important;
+        }
+      }
+      .card-wrapper {
+        padding-left: 25px;
+        padding-right: 25px;
+        z-index: 0;
+  
+      }
+  
+      .between-text {
+        margin-top: 20px;
+        width: 100%;
+        font-size: 30px;
+        color: white;
+      }
+  
+      .view-suggested-button {
+        border: 1px solid black;
+        border-radius: 35px;
+        background: #34343E;
+        padding: 10px 40px;
+        .view-suggested-button-name {
+          margin-top: 10px;
+          font-size: 20px;
+          font-weight: 500;
+          line-height: 1.5rem;
+          color: white !important;
+        }
+  
+        .view-suggested-button-description {
+          font-size: 12px;
+          font-weight: 400;
+          color: white !important;
+        }
+      }
+    }
+  }
+  
+  @media(min-width: 768px) {
+    .client-wrapper {
+      height: 100vh;
+      width: 100%;
+    }
+  }
+  
+  
+  @media(max-width: 767px) {
+    .dashboard-wrapper {
+      .dashboard-header {
+        .dashboard-title {
+          font-size: 30px;
+        }
+      }
+      .card-wrapper {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+        margin-bottom: 15px;
+      }
+    }
+  
+    .view-suggested-button {
+      margin-bottom: 10px !important;
+      border-radius: 35px !important;
+      padding: 5px 20px !important;
+  
+      .view-suggested-button-name {
+        font-size: 15px;
+        font-weight: 500;
+      }
+  
+      .view-suggested-button-description {
+        font-size: 8px;
+        font-weight: 400;
+      }
+    }
+  }
+  
+  
