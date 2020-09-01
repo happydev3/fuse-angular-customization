@@ -6,7 +6,7 @@
     cursor: pointer;
     z-index: 0;
   
-    mat-card-header {
+    div {
       z-index: 2;
       .card-header-image {
         width: 100%;
@@ -32,7 +32,7 @@
       padding: 15px;
     }
   
-    mat-card-actions {
+    div {
       padding: 10px 20px;
       background-color: rgb(223, 223, 223);
       .card-footer-custom {

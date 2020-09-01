@@ -1,1 +1,74 @@
-<p>stock-view works!</p>
+
+
+<div class="page-layout carded fullwidth">
+
+    <!-- TOP BACKGROUND -->
+    <div class="top-bg accent"></div>
+    <!-- / TOP BACKGROUND -->
+
+    <!-- CENTER -->
+    <div class="center">
+
+        <!-- CONTENT HEADER -->
+        <div class="header accent p-24" fxLayout="row" fxLayoutAlign="start center">
+            <h2 class="m-0">Stock Table</h2>
+        </div>
+        <!-- / CONTENT HEADER -->
+
+        <!-- CONTENT CARD -->
+        <div class="content-card">
+
+            <!-- CONTENT TOOLBAR -->
+            <!-- <div class="toolbar px-24 py-8">
+                <span>Content toolbar</span>
+            </div> -->
+            <!-- / CONTENT TOOLBAR -->
+
+            <!-- CONTENT -->
+            <div class="content p-24">
+
+                <div class="mat-elevation-z8">
+                    <table mat-table [dataSource]="dataSource">
+                  
+                      <ng-container matColumnDef="category">
+                        <th mat-header-cell *matHeaderCellDef> Category </th>
+                        <td mat-cell *matCellDef="let element"> {{element.category}} </td>
+                      </ng-container>
+                  
+                      <ng-container matColumnDef="subcategory">
+                        <th mat-header-cell *matHeaderCellDef> Subcategory </th>
+                        <td mat-cell *matCellDef="let element"> {{element.subcategory}} </td>
+                      </ng-container>
+                  
+                      <ng-container matColumnDef="products">
+                        <th mat-header-cell *matHeaderCellDef> Products </th>
+                        <td mat-cell *matCellDef="let element"> {{element.products}} </td>
+                      </ng-container>
+                  
+                      <ng-container matColumnDef="store">
+                        <th mat-header-cell *matHeaderCellDef> Symbol </th>
+                        <td mat-cell *matCellDef="let element"> {{element.store}} </td>
+                      </ng-container>
+                
+                      <ng-container matColumnDef="stock">
+                        <th mat-header-cell *matHeaderCellDef> Stock </th>
+                        <td mat-cell *matCellDef="let element"> {{element.stock}} </td>
+                      </ng-container>
+                  
+                      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                    </table>
+                  
+                    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+                </div>
+
+            </div>
+            <!-- / CONTENT -->
+
+        </div>
+        <!-- / CONTENT CARD -->
+
+    </div>
+    <!-- / CENTER -->
+
+</div>

@@ -31,7 +31,7 @@ export const navigation: FuseNavigation[] = [
                 id       : 'categories',
                 title    : 'Categories',
                 type     : 'collapsable',
-                icon    : 'view_quilt',
+                icon    : 'category',
                 children : [
                     {
                         id   : 'view',
@@ -91,7 +91,7 @@ export const navigation: FuseNavigation[] = [
                 id       : 'stores',
                 title    : 'Stores',
                 type     : 'collapsable',
-                icon     : 'school',
+                icon     : 'store',
                 children : [
                     {
                         id   : 'view',

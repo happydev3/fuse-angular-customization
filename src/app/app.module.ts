@@ -14,7 +14,6 @@ import { fuseConfig } from 'app/fuse-config';
 import { AppComponent } from 'app/app.component';
 import { AppStoreModule } from 'app/store/store.module';
 import { LayoutModule } from 'app/layout/layout.module';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 const appRoutes: Routes = [
     {
@@ -53,7 +52,6 @@ const appRoutes: Routes = [
         // App modules
         LayoutModule,
         AppStoreModule,
-        NgbModule
     ],
     bootstrap   : [
         AppComponent

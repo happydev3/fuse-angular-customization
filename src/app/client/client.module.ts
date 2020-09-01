@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ClientComponent } from './client.component';
 import { RouterModule, Routes } from '@angular/router';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 const clientRoutes: Routes = [
     {
@@ -34,8 +33,7 @@ const clientRoutes: Routes = [
   declarations: [ClientComponent],
   imports: [
     CommonModule,
-    RouterModule.forChild(clientRoutes),
-    NgbModule
+    RouterModule.forChild(clientRoutes)
   ]
 })
 export class ClientModule { }
