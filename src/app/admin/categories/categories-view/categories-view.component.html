@@ -1,1 +1,127 @@
-<p>categories-view works!</p>
+<div class="page-layout carded fullwidth">
+
+    <!-- TOP BACKGROUND -->
+    <div class="top-bg accent"></div>
+    <!-- / TOP BACKGROUND -->
+
+    <!-- CENTER -->
+    <div class="center">
+
+        <!-- CONTENT HEADER -->
+        <div class="header accent p-24" fxLayout="row" fxLayoutAlign="start center">
+            <h2 class="m-0">Categories Table</h2>
+        </div>
+        <!-- / CONTENT HEADER -->
+
+        <!-- CONTENT CARD -->
+        <div class="content-card">
+
+            <!-- CONTENT TOOLBAR -->
+            <!-- <div class="toolbar px-24 py-8">
+                <span>Content toolbar</span>
+            </div> -->
+            <!-- / CONTENT TOOLBAR -->
+
+            <!-- CONTENT -->
+            <div class="content p-24">
+
+                <mat-sidenav-container>
+
+                    <div id="board">
+                
+                        <!-- HEADER -->
+                        <!-- <div class="header p-16 p-md-24" [ngClass]="category.settings.color" fxLayout="column"> -->
+                
+                            <!-- <div class="header-content" fxLayout="row wrap" fxLayoutAlign="space-between" fxFlex="1 0 auto"> -->
+                
+                                <!-- BOARD SELECTION BUTTON -->
+                                <!-- <div fxLayout="row" fxLayoutAlign="center center" fxFlexOrder="2" fxFlexOrder.gt-xs="1">
+                                    <button mat-raised-button class="header-boards-button"
+                                            [ngClass]="category.settings.color+'-800'"
+                                            routerLink="/apps/scrumboard/boards"
+                                            aria-label="boards button">
+                                        <mat-icon class="mr-8">assessment</mat-icon>
+                                        <span>BOARDS</span>
+                                    </button>
+                                </div> -->
+                                <!-- / BOARD SELECTION BUTTON -->
+                
+                                <!-- BOARD NAME -->
+                                <!-- <div class="header-board-name mb-8 mb-md-0"
+                                     fxLayout="row" fxLayoutAlign="center center"
+                                     fxLayout.gt-xs="row" fxLayoutAlign.gt-xs="center center"
+                                     fxFlex="1 0 100%" fxFlex.gt-xs="1 0 auto"
+                                     fxFlexOrder="1" fxFlexOrder.gt-xs="2">
+                                    <mat-icon *ngIf="category.settings.subscribed" class="board-subscribe s-16">remove_red_eye</mat-icon> -->
+                                    <!-- <scrumboard-edit-board-name
+                                        [board]="board"
+                                        (boardNameChanged)="onBoardNameChanged($event)">
+                                    </scrumboard-edit-board-name> -->
+                                <!-- </div> -->
+                                <!-- / BOARD NAME -->
+                
+                                <!-- TOOLBAR -->
+                                <!-- <div class="toolbar" fxLayout="row" fxLayoutAlign="space-between center" fxFlexOrder="3"> -->
+                
+                                    <!-- BOARD SETTINGS BUTTON -->
+                                    <!-- <button mat-icon-button (click)="settingsSidenav.toggle()"
+                                            aria-label="Settings" matTooltip="Settings">
+                                        <mat-icon>settings</mat-icon>
+                                    </button> -->
+                                    <!-- / BOARD SETTINGS BUTTON -->
+                                <!-- </div> -->
+                                <!-- / TOOLBAR -->
+                
+                            <!-- </div> -->
+                
+                        <!-- </div> -->
+                        <!-- / HEADER -->
+                
+                        <div fxFlex class="board-content-wrapper p-16 p-md-24">
+                
+                            <!-- BOARD -->
+                            <div class="board-content ngx-dnd-container p-16 p-md-24" fxLayout="row"
+                                 ngxDroppable="list" [model]="category.lists" (out)="onDrop($event)"
+                                 [@animateStagger]="{value:'50'}">
+                
+                                <!-- LIST -->
+                                <app-category-card
+                                    class="scrumboard-board-list list-wrapper ngx-dnd-item"
+                                    ngxDraggable
+                                    *ngFor="let list of category.lists"
+                                    [model]="list"
+                                    [list]="list"
+                                    [@animate]="{value:'*',params:{duration:'350ms',x:'100%'}}">
+                                </app-category-card>
+                                <!-- / LIST -->
+                
+                                <!-- NEW LIST BUTTON-->
+                                <!-- <scrumboard-board-add-list class="new-list-wrapper" (listAdded)="onListAdd($event)"
+                                                           ngxDraggable [moves]="false"
+                                                           [@animate]="{value:'*',params:{duration:'350ms',x:'100%'}}">
+                                </scrumboard-board-add-list> -->
+                                <!-- / NEW LIST BUTTON-->
+                
+                            </div>
+                            <!-- / BOARD -->
+                        </div>
+                        <!-- primary content -->
+                    </div>
+                
+                    <!-- <mat-sidenav #settingsSidenav position="end">
+                        <scrumboard-board-settings></scrumboard-board-settings>
+                    </mat-sidenav> -->
+                
+                </mat-sidenav-container>
+
+            </div>
+            <!-- / CONTENT -->
+
+        </div>
+        <!-- / CONTENT CARD -->
+
+    </div>
+    <!-- / CENTER -->
+
+</div>
+

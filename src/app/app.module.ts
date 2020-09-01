@@ -14,11 +14,13 @@ import { fuseConfig } from 'app/fuse-config';
 import { AppComponent } from 'app/app.component';
 import { AppStoreModule } from 'app/store/store.module';
 import { LayoutModule } from 'app/layout/layout.module';
+import { FakeDbService } from './fake-db/fake-db.service';
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 
 const appRoutes: Routes = [
     {
         path      : '',
-        redirectTo: '/client',
+        redirectTo: '/client/dashboard',
         pathMatch: 'full'
     },
     {
@@ -44,6 +46,10 @@ const appRoutes: Routes = [
         TranslateModule.forRoot(),
         // Fuse modules
         FuseModule.forRoot(fuseConfig),
+        InMemoryWebApiModule.forRoot(FakeDbService, {
+            delay             : 0,
+            passThruUnknownUrl: true
+        }),
         FuseProgressBarModule,
         FuseSharedModule,
         FuseSidebarModule,

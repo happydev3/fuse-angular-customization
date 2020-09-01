@@ -5,6 +5,9 @@ import { CategoriesViewComponent } from './categories-view/categories-view.compo
 import { CategoriesFormComponent } from './categories-form/categories-form.component';
 import { RouterModule, Routes } from '@angular/router';
 import { MaterialModule } from 'app/material/material.module';
+import { CategoryCardComponent } from './categories-view/category-card/category-card.component';
+import { CategoriesService, BoardResolve } from '../_services/categories.service';
+import { SubcategoryComponent } from './categories-view/category-card/subcategory/subcategory.component';
 
 const routes: Routes = [
     {
@@ -27,11 +30,15 @@ const routes: Routes = [
 ]
 
 @NgModule({
-  declarations: [CategoriesComponent, CategoriesViewComponent, CategoriesFormComponent],
-  imports: [
-    CommonModule,
-    RouterModule.forChild(routes),
-    MaterialModule
-  ]
+    declarations: [CategoriesComponent, CategoriesViewComponent, CategoriesFormComponent, CategoryCardComponent, SubcategoryComponent],
+    imports: [
+        CommonModule,
+        RouterModule.forChild(routes),
+        MaterialModule
+    ],
+    providers: [
+        CategoriesService,
+        BoardResolve
+    ],
 })
 export class CategoriesModule { }
