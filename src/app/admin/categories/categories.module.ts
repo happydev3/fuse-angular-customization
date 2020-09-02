@@ -12,21 +12,27 @@ import { SubcategoryComponent } from './categories-view/category-card/subcategor
 const routes: Routes = [
     {
         path: '',
-        redirectTo: 'view',
-        pathMatch: 'full'
+        component: CategoriesComponent,
+        children: [
+            {
+                path: '',
+                redirectTo: 'view',
+                pathMatch: 'full'
+            },
+            {
+                path: 'view',
+                component: CategoriesViewComponent
+            },
+            {
+                path: 'add',
+                component: CategoriesFormComponent
+            },
+            {
+                path: 'update',
+                component: CategoriesFormComponent
+            }
+        ]
     },
-    {
-        path: 'view',
-        component: CategoriesViewComponent
-    },
-    {
-        path: 'add',
-        component: CategoriesFormComponent
-    },
-    {
-        path: 'update',
-        component: CategoriesFormComponent
-    }
 ]
 
 @NgModule({

@@ -10,22 +10,9 @@ export const navigation: FuseNavigation[] = [
             {
                 id       : 'stock',
                 title    : 'Stock',
-                type     : 'collapsable',
+                type     : 'item',
                 icon     : 'dashboard',
-                children : [
-                    {
-                        id   : 'view',
-                        title: 'View',
-                        type : 'item',
-                        url  : '/admin/stock/view'
-                    },
-                    {
-                        id   : 'add',
-                        title: 'Add',
-                        type : 'item',
-                        url  : '/admin/stock/add'
-                    }
-                ]
+                url      : '/admin/stock/view',
             },
             {
                 id       : 'categories',
