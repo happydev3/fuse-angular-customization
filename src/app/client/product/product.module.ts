@@ -4,6 +4,8 @@ import { ProductComponent } from './product.component';
 import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from 'app/shared/shared.module';
 import { FuseSharedModule } from '@fuse/shared.module';
+import { ComponentsModule } from '../_components/components.module';
+import { DialogService } from '../_services/dialog.service';
 
 const routes: Routes = [
     {
@@ -18,7 +20,11 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forChild(routes),
     SharedModule,
-    FuseSharedModule
+    FuseSharedModule,
+    ComponentsModule
+  ],
+  providers: [
+      DialogService
   ]
 })
 export class ProductModule { }

@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { fuseAnimations } from '@fuse/animations';
+import { DialogService } from '../_services/dialog.service';
 
 @Component({
     selector: 'app-product',
@@ -167,12 +168,18 @@ export class ProductComponent implements OnInit {
         ]
     }
 
-    constructor() { }
+    constructor(
+        private _dialogService: DialogService
+    ) { }
 
     ngOnInit(): void {
     }
 
     selectDimension(e):void {
         console.log(e);
+    }
+
+    openDialog() {
+        this._dialogService.openInterestDialog();
     }
 }
