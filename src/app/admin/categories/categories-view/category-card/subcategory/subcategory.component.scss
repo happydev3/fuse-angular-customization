@@ -21,6 +21,11 @@ app-subcategory {
     .list-card-details {
         padding: 16px 16px 0 16px;
 
+        .subcategory-item {
+            display: flex;
+            justify-content: space-between;
+        }
+
         .list-card-labels {
             margin-bottom: 6px;
 

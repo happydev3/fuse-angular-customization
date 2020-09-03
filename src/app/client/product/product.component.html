@@ -1,1 +1,80 @@
-<p>product works!</p>
+<div id="boards" fxLayout="column" fxLayoutAlign="start center" fxFlex fusePerfectScrollbar>
+    <img class="background-image" src='/assets/images/client/background_image@2x.png'>
+    <div class="header" fxLayout="row" fxLayoutAlign="center center" fxFlex="0 0 auto"
+        [@animate]="{value:'*',params:{delay:'100ms'}}">
+        <div class="logo-wrapper">
+            <img src="/assets/images/client/logo@2x.png" class="topbar-logo" />
+        </div>
+        <div class="header-right">
+            <div class="info-product">
+                <h1 style="font-weight: 600; text-align: center">{{product.name}}</h1>
+                <div style="display: flex">
+                    <h3>Total Products in stock: {{product.stock}}</h3>
+                    <div class="select-dimension">
+                        <select>
+                            <option *ngFor="let dimension of product.dimensions">{{dimension.name}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-wrapper">
+
+        <div class="courses" fxLayout="row wrap" fxLayoutAlign="center" [@animateStagger]="{value:'50'}" >
+
+            <div class="course" *ngFor="let attribute of product.allAttributes[0].attributes" fxFlex="100" fxFlex.gt-xs="100" fxFlex.gt-sm="50"
+                [@animate]="{value:'*',params:{y:'100%'}}">
+    
+                <div class="course-content" fxFlex="1 1 auto" style="display: flex">
+
+                    <div class="attribute-image-wrapper">
+                        <img [src]="attribute.image" />
+                    </div>
+
+                    <div style="display: block">
+                        <div class="card-header" fxLayout="row" fxLayoutAlign="center center">
+    
+                            <div class="attribute-name" fxFlex>
+                                {{attribute.name}}
+                            </div>
+        
+                        </div>
+    
+                        <div class="content" fxLayout="column" fxLayoutAlign="center center">
+                            <p>
+                                {{attribute.description}}
+                            </p>
+                            <div class="sub-attributes" *ngIf="attribute.sub_attributes && attribute.sub_attributes.length !== 0">
+                                <div *ngFor="let sub of attribute.sub_attributes">
+                                    <p>{{sub.name}}</p>
+                                    <p>{{sub.description}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+    
+            <div class="no-courses" *ngIf="product.allAttributes[0].attributes.length === 0">
+                No Attribute found!
+            </div>
+    
+        </div>
+
+
+        <div class="footer-button">
+            <button mat-raised-button class="back-btn" [routerLink]="['/client/category/1']">
+                <mat-icon>arrow_back</mat-icon>
+                Back To Home
+            </button>
+            <button mat-raised-button class="orange-700-fg reset-btn">
+                <mat-icon>settings_backup_restore</mat-icon>
+                Reset Search Criteria
+            </button>
+        </div>
+
+    </div>
+</div>

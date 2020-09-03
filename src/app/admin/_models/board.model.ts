@@ -1,7 +1,7 @@
 import { FuseUtils } from '@fuse/utils';
 
-import { List } from './list.model';
-import { Card } from './card.model';
+import { List } from 'app/admin/_models/list.model';
+import { Card } from 'app/admin/_models/card.model';
 
 const sampleLabels = [
     {

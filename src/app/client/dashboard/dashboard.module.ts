@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './dashboard.component';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardCardComponent } from './dashboard-card/dashboard-card.component';
-import { MaterialModule } from 'app/material/material.module';
+import { SharedModule } from 'app/shared/shared.module';
+import { FuseSharedModule } from '@fuse/shared.module';
 
 const routes: Routes = [
     {
@@ -17,7 +18,8 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    MaterialModule
+    SharedModule,
+    FuseSharedModule
   ]
 })
 export class DashboardModule { }

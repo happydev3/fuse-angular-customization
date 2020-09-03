@@ -4,32 +4,42 @@ import { ProductsComponent } from './products.component';
 import { ProductsViewComponent } from './products-view/products-view.component';
 import { ProductsFormComponent } from './products-form/products-form.component';
 import { RouterModule, Routes } from '@angular/router';
+import { SharedModule } from 'app/shared/shared.module';
 
 const routes: Routes = [
     {
         path: '',
-        redirectTo: 'view',
-        pathMatch: 'full'
+        component: ProductsComponent,
+        children: [
+            {
+                path: '',
+                redirectTo: 'view',
+                pathMatch: 'full'
+            },
+            {
+                path: 'view',
+                component: ProductsViewComponent
+            },
+            {
+                path: 'add',
+                component: ProductsFormComponent
+            },
+            {
+                path: 'update',
+                component: ProductsFormComponent
+            }
+        ]
     },
-    {
-        path: 'view',
-        component: ProductsViewComponent
-    },
-    {
-        path: 'add',
-        component: ProductsFormComponent
-    },
-    {
-        path: 'update',
-        component: ProductsFormComponent
-    }
 ]
 
 @NgModule({
   declarations: [ProductsComponent, ProductsViewComponent, ProductsFormComponent],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    SharedModule
+  ],
+  providers: [
   ]
 })
 export class ProductsModule { }

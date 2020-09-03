@@ -9,6 +9,7 @@ app-category-card {
 
     .list {
         max-height: 100%;
+        border: 1px solid;
         border-radius: 2px;
         transition: box-shadow 150ms ease;
 
@@ -23,6 +24,8 @@ app-category-card {
 
             .list-header-name {
                 padding: 20px;
+                font-weight: 600 !important;
+                font-size: 20px;
             }
 
             .list-header-action {

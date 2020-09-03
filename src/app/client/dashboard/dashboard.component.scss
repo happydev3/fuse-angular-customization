@@ -1,102 +1,289 @@
-.client-wrapper {
-    background-color: #FAA61A;
-    position: absolute;
-    width: 100%;
-    z-index: -1000;
-  
-    .background-image {
-      z-index: -999;
-      width: 100%;
-      position: absolute;
-      bottom: 20px;
-    }
-    .dashboard-wrapper {
-  
-      z-index: -998;
-      .dashboard-header {
-        margin-top: 50px;
-        .dashboard-title {
-          width: 100%;
-          font-weight: 600;
-          font-size: 45px;
-          color: white;
-          text-transform: uppercase;
-          text-align: center !important;
-        }
-      }
-      .card-wrapper {
-        padding-left: 25px;
-        padding-right: 25px;
-        z-index: 0;
-  
-      }
-  
-      .between-text {
-        margin-top: 20px;
+@import "src/@fuse/scss/fuse";
+
+app-dashboard {
+    min-height: 100%;
+
+    #boards {
         width: 100%;
-        font-size: 30px;
-        color: white;
-      }
-  
-      .view-suggested-button {
-        border: 1px solid black;
-        border-radius: 35px;
-        background: #34343E;
-        padding: 10px 40px;
-        .view-suggested-button-name {
-          margin-top: 10px;
-          font-size: 20px;
-          font-weight: 500;
-          line-height: 1.5rem;
-          color: white !important;
+        overflow: auto;
+        background-color: #FAA61A !important;
+        -webkit-overflow-scrolling: touch;
+        // z-index: -998;
+
+        .header {
+
+            h1 {
+                font-size: 40px;
+                font-weight: 300;
+            }
         }
-  
-        .view-suggested-button-description {
-          font-size: 12px;
-          font-weight: 400;
-          color: white !important;
+
+        .board-list {
+            z-index: 0;
+            padding: 32px 0;
+            max-height: none !important;
+
+            .board-list-item {
+                // z-index: 1;
+                background-color: white !important;
+                color: black;
+                min-width: 210px;
+                min-height: 210px;
+                width: 300px;
+                height: 350px;
+                padding: 24px 0;
+                margin: 16px;
+                border-radius: 8px;
+                cursor: pointer !important;
+                // background: rgba(0, 0, 0, 0.12);
+                transition: box-shadow 150ms ease-in;
+                cursor: pointer;
+
+                &:hover:not(.add-new-board) {
+                    @include mat-elevation(8);
+                }
+
+                .board-name {
+                    padding: 16px 32px 0 32px;
+                    font-weight: 300;
+                    font-size: 16px;
+                    text-align: center;
+                }
+                .border-description {
+                    padding: 10px;
+                }
+
+                &.add-new-board {
+                    background: rgba(0, 0, 0, 0.06);
+                    border: 2px dashed rgba(255, 255, 255, 0.37);
+                }
+            }
         }
-      }
     }
-  }
-  
-  @media(min-width: 768px) {
-    .client-wrapper {
-      height: 100vh;
-      width: 100%;
-    }
-  }
-  
-  
-  @media(max-width: 767px) {
-    .dashboard-wrapper {
-      .dashboard-header {
-        .dashboard-title {
-          font-size: 30px;
+}
+
+
+@mixin scrumboard-theme($theme) {
+
+    $background: map-get($theme, background);
+    $foreground: map-get($theme, foreground);
+    $accent: map-get($theme, accent);
+
+    // List
+    scrumboard-board-list {
+
+        .list {
+
+            .list-header,
+            .list-content,
+            .list-footer {
+                background: map-get($background, app-bar);
+            }
+
+            .list-header {
+                border-bottom-color: map-get($foreground, divider);
+            }
+
+            .list-footer {
+                border-top-color: map-get($foreground, divider);
+            }
+
         }
-      }
-      .card-wrapper {
-        padding-left: 10px !important;
-        padding-right: 10px !important;
-        margin-bottom: 15px;
-      }
     }
-  
-    .view-suggested-button {
-      margin-bottom: 10px !important;
-      border-radius: 35px !important;
-      padding: 5px 20px !important;
-  
-      .view-suggested-button-name {
-        font-size: 15px;
-        font-weight: 500;
-      }
-  
-      .view-suggested-button-description {
-        font-size: 8px;
-        font-weight: 400;
-      }
+
+    // Add list
+    scrumboard-board-add-list {
+
+        .new-list {
+            background: map-get($background, app-bar);
+
+            .new-list-form {
+
+                > input {
+                    background: map-get($background, app-bar);
+                    color: map-get($foreground, text);
+                }
+            }
+        }
     }
-  }
-  
-  
+
+    // Board
+    scrumboard-board {
+
+        #board {
+
+            > .header {
+                background-color: map-get($accent, default);
+                color: map-get($accent, default-contrast);
+            }
+        }
+    }
+
+    // Add card directive
+    scrumboard-board-add-card {
+
+        .add-card-button {
+            background-color: map-get($background, app-bar);
+        }
+
+        .add-card-form-wrapper {
+            background-color: map-get($background, app-bar);
+        }
+    }
+
+    // Card
+    scrumboard-board-card {
+        background-color: map-get($background, card);
+        border-color: map-get($foreground, divider);
+
+        .list-card-details {
+
+            .list-card-badges {
+
+                .badge {
+                    background-color: rgba(0, 0, 0, 0.4);
+                    color: #FFFFFF;
+
+                    &.due-date {
+                        background-color: mat-color(mat-palette($mat-green));
+
+                        &.overdue {
+                            background-color: mat-color(mat-palette($mat-red));
+                        }
+                    }
+
+                    &.check-items {
+
+                        &.completed {
+                            background-color: mat-color(mat-palette($mat-green));
+                        }
+                    }
+                }
+            }
+        }
+
+        .list-card-footer {
+            border-top-color: map-get($foreground, divider);
+
+            .list-card-footer-item {
+                color: map-get($foreground, secondary-text);
+            }
+        }
+    }
+
+    // Card dialog
+    .scrumboard-card-dialog {
+
+        .mat-dialog-container {
+
+            .mat-dialog-content {
+
+                .sections {
+
+                    .section {
+                        border-bottom-color: map-get($foreground, divider);
+
+                        .attachments {
+
+                            .attachment {
+
+                                .attachment-preview {
+                                    background-color: map-get($background, card);
+                                }
+
+                                .attachment-content {
+
+                                    .attachment-time {
+                                        color: map-get($foreground, secondary-text);
+                                    }
+                                }
+                            }
+                        }
+
+                        .comments {
+
+                            .comment {
+
+                                .comment-bubble {
+                                    background-color: map-get($background, app-bar);
+                                    border-color: map-get($background, app-bar);
+
+                                    &:after,
+                                    &:before {
+                                        border-color: map-get($background, app-bar) transparent transparent transparent;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .scrumboard-labels-menu {
+
+        .mat-menu-content {
+
+            .views {
+
+                .view {
+
+                    > .header {
+                        border-bottom-color: map-get($foreground, divider);
+                    }
+                }
+            }
+        }
+    }
+
+    // Settings
+    scrumboard-board-settings {
+
+        .views {
+
+            .view {
+
+                > .header {
+                    border-bottom-color: map-get($foreground, divider);
+                    background: map-get($accent, default);
+                    color: map-get($accent, default-contrast);
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 767px) {
+    .header {
+
+        h1 {
+            font-size: 30px !important;
+            font-weight: 300;
+        }
+    }
+
+    .view-suggested-btn {
+        width: 96%;
+        margin-left: 2%;
+        margin-right: 2%;
+
+        p {
+            font-size: 10px;
+        }
+    }
+}
+
+
+.background-image {
+    width: 100%;
+    position: absolute;
+    bottom: 20px;
+}
+
+.view-suggested-btn {
+    margin-bottom: 20px !important;
+    background: #2D323E !important;
+    color: white !important;
+    border-radius: 20px !important;
+}

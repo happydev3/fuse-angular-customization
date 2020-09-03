@@ -1,1 +1,22 @@
-<p>attributes-form works!</p>
+<div class="form-header">
+    <h2>Attribute Form</h2>
+</div>
+<form [formGroup]="attributeDetail">
+    <div class="attribute-detail">
+        <mat-form-field appearance="outline" class="attribute-detail-form">
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="name" placeholder="Name"/>
+        </mat-form-field>
+    </div>
+    <div class="attribute-detail">
+        <mat-form-field appearance="outline" class="attribute-detail-form">
+            <mat-label>Parent Attribute</mat-label>
+            <mat-select formControlName="id_attribute">
+                <mat-option>Attribute 1</mat-option>
+                <mat-option>Attribute 2</mat-option>
+                <mat-option>Attribute 3</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <button mat-raised-button color="accent" class="submit-btn">Save</button>
+</form>

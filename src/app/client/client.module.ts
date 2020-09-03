@@ -18,11 +18,11 @@ const clientRoutes: Routes = [
                 loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)
             },
             {
-                path: 'category',
+                path: 'category/:id',
                 loadChildren: () => import('./category/category.module').then(m => m.CategoryModule)
             },
             {
-                path: 'product',
+                path: 'product/:id',
                 loadChildren: () => import('./product/product.module').then(m => m.ProductModule)
             }
         ]

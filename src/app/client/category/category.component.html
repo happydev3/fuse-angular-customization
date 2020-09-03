@@ -1,1 +1,64 @@
-<p>category works!</p>
+<!-- BOARDS -->
+<div id="boards" fxLayout="column" fxLayoutAlign="start center" fxFlex fusePerfectScrollbar>
+    <img class="background-image" src='/assets/images/client/background_image@2x.png'>
+    <div class="header" fxLayout="row" fxLayoutAlign="center center" fxFlex="0 0 auto"
+        [@animate]="{value:'*',params:{delay:'100ms'}}">
+        <div class="logo-wrapper">
+            <img src="/assets/images/client/logo@2x.png" class="topbar-logo" />
+        </div>
+        <div class="header-right">
+            <h1 style="font-weight: 600; text-align: center">{{categories.name}}</h1>
+            <h3>Total Products in stock: {{categories.stock}}</h3>
+        </div>
+    </div>
+
+    <div class="content-wrapper">
+
+        <div *ngFor="let category of categories.childs">
+
+            <div class="arrow-icon">
+                <mat-icon>arrow_upward</mat-icon>
+            </div>
+
+            <div class="courses" fxLayout="row wrap" fxLayoutAlign="center" [@animateStagger]="{value:'50'}" >
+
+                <div class="sub-category"><h3>{{category.name}}</h3></div>
+
+                <div class="course" *ngFor="let product of products | product: category.id" fxFlex="100" fxFlex.gt-xs="33" fxFlex.gt-sm="20"
+                 [@animate]="{value:'*',params:{y:'100%'}}" [routerLink]="['/client/product/' + product.id]">
+        
+                    <div class="course-content" fxLayout="column" fxFlex="1 1 auto">
+        
+                        <div class="card-header" fxLayout="row" fxLayoutAlign="center center">
+        
+                            <div class="category" fxFlex>
+                                {{product.name}}
+                            </div>
+        
+                        </div>
+        
+                    </div>
+        
+                </div>
+        
+                <div class="no-courses" *ngIf="(products | product: category.id).length === 0">
+                    No products found!
+                </div>
+        
+            </div>
+
+        </div>
+
+        <div class="footer-button">
+            <button mat-raised-button class="back-btn" [routerLink]="['/client/dashboard']">
+                <mat-icon>arrow_back</mat-icon>
+                Back To Home
+            </button>
+            <button mat-raised-button class="orange-700-fg reset-btn">
+                <mat-icon>settings_backup_restore</mat-icon>
+                Reset Search Criteria
+            </button>
+        </div>
+
+    </div>
+</div>

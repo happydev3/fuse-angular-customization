@@ -1,1 +1,42 @@
-<p>categories-form works!</p>
+<div class="form-header">
+    <h2>Category Form</h2>
+</div>
+<form [formGroup]="categoryDetail">
+    <div class="category-detail">
+        <mat-form-field appearance="outline" class="category-detail-form">
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="name" placeholder="Name">
+        </mat-form-field>
+    </div>
+    <div class="category-detail">
+        <mat-form-field appearance="outline" class="category-detail-form">
+            <mat-label>Parent Category</mat-label>
+            <mat-select formControlName="id_parent">
+                <mat-option>Category 1</mat-option>
+                <mat-option>Category 2</mat-option>
+                <mat-option>Category 3</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div class="category-detail">
+        <mat-form-field appearance="outline" class="category-detail-form">
+            <mat-label>Description</mat-label>
+            <textarea formControlName="description" matInput></textarea>
+        </mat-form-field>
+    </div>
+
+    <div class="category-detail">
+        <div appearance="outline" class="category-detail-form image-upload">
+            <img [src]="url" class="preview-image">
+            <div style="margin-top: 10px">
+                <label for="category-icon" class="category-icon-select">{{!isSelected ? 'Select File' : 'Change File'}}</label>
+                <input id="category-icon" formControlName="icon" type="file" (change)="onSelectFile($event)"/>
+                <button mat-raised-button color="primary" class="removebtn" (click)="removeFile()" *ngIf="isSelected">Remove</button>
+            </div>
+        </div>
+    </div>
+
+    <button mat-raised-button color="accent" class="mt-24" class="submit-btn">Save</button>
+    
+</form>

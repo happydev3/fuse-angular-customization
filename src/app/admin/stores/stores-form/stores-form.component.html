@@ -1,1 +1,12 @@
-<p>stores-form works!</p>
+<div class="form-header">
+    <h2>Store Form</h2>
+</div>
+<form [formGroup]="storeDetail">
+    <div class="store-detail">
+        <mat-form-field appearance="outline" class="store-detail-form">
+            <mat-label>Name</mat-label>
+            <input formControlName="name" placeholder="name" matInput />
+        </mat-form-field>
+    </div>
+    <button mat-raised-button color="accent" class="submit-btn">Save</button>
+</form>

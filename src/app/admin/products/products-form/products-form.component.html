@@ -1,1 +1,80 @@
-<p>products-form works!</p>
+<div class="form-header">
+    <h2>Product form</h2>
+</div>
+<form [formGroup]="productDetailForm">
+    <div class="product-detail">
+        <mat-form-field appearance="outline" class="product-detail-form">
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="name" placeholder="Name" />
+        </mat-form-field>
+    </div>
+
+    <div class="product-detail">
+        <mat-form-field appearance="outline" class="product-detail-form">
+            <mat-label>Category</mat-label>
+            <mat-select formControlName="id_category">
+                <mat-optgroup *ngFor="let group of pokemonGroups" [label]="group.name" [disabled]="group.disabled">
+                    <mat-option *ngFor="let pokemon of group.category" [value]="pokemon.id">
+                        {{pokemon.name}}
+                    </mat-option>
+                </mat-optgroup>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div class="product-detail">
+        <mat-form-field appearance="outline" class="product-detail-form">
+            <mat-label>Dimensions</mat-label>
+            <mat-select formControlName="id_dimension" multiple>
+                <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div class="product-detail">
+        <mat-tab-group mat-align-tabs="start">
+            <mat-tab label="First">
+                <ckeditor [editor]="Editor" formControlName="attribute1" data="<p>Hello, world!</p>"></ckeditor>
+                <ckeditor [editor]="Editor" formControlName="attribute2" data="<p>Hello, world!</p>"></ckeditor>
+                <ckeditor [editor]="Editor" formControlName="attribute3" data="<p>Hello, world!</p>"></ckeditor>
+                <ckeditor [editor]="Editor" formControlName="attribute4" data="<p>Hello, world!</p>"></ckeditor>
+                <ckeditor [editor]="Editor" formControlName="attribute5" data="<p>Hello, world!</p>"></ckeditor>
+                <ckeditor [editor]="Editor" formControlName="attribute6" data="<p>Hello, world!</p>"></ckeditor>
+            </mat-tab>
+            <mat-tab label="Second">
+                <ckeditor [editor]="Editor" formControlName="attribute1" data="<p>Hello, world!</p>"></ckeditor>
+                <ckeditor [editor]="Editor" formControlName="attribute2" data="<p>Hello, world!</p>"></ckeditor>
+                <ckeditor [editor]="Editor" formControlName="attribute3" data="<p>Hello, world!</p>"></ckeditor>
+                <ckeditor [editor]="Editor" formControlName="attribute4" data="<p>Hello, world!</p>"></ckeditor>
+                <ckeditor [editor]="Editor" formControlName="attribute5" data="<p>Hello, world!</p>"></ckeditor>
+                <ckeditor [editor]="Editor" formControlName="attribute6" data="<p>Hello, world!</p>"></ckeditor>
+            </mat-tab>
+            <mat-tab label="Third">
+                <ckeditor [editor]="Editor" formControlName="attribute1" data="<p>Hello, world!</p>"></ckeditor>
+                <ckeditor [editor]="Editor" formControlName="attribute2" data="<p>Hello, world!</p>"></ckeditor>
+                <ckeditor [editor]="Editor" formControlName="attribute3" data="<p>Hello, world!</p>"></ckeditor>
+                <ckeditor [editor]="Editor" formControlName="attribute4" data="<p>Hello, world!</p>"></ckeditor>
+                <ckeditor [editor]="Editor" formControlName="attribute5" data="<p>Hello, world!</p>"></ckeditor>
+                <ckeditor [editor]="Editor" formControlName="attribute6" data="<p>Hello, world!</p>"></ckeditor>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+
+    <div class="product-detail">
+        <mat-form-field appearance="outline" class="product-detail-form">
+            <mat-label>Stores</mat-label>
+            <mat-select formControlName="id_store" multiple>
+                <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div class="product-detail">
+        <mat-form-field appearance="outline" class="product-detail-form">
+            <mat-label>Suggested</mat-label>
+            <mat-select formControlName="is_product_suggested" multiple>
+                <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+</form>

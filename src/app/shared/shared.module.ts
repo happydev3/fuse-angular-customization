@@ -12,9 +12,16 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 import { NgxDnDModule } from '@swimlane/ngx-dnd';
 import { FusePipesModule } from '@fuse/pipes/pipes.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { IvyCarouselModule } from 'angular-responsive-carousel';
+import { PipesModule } from './pipes/pipes.module';
 
 @NgModule({
   declarations: [],
@@ -32,8 +39,17 @@ import { FusePipesModule } from '@fuse/pipes/pipes.module';
     MatTooltipModule,
     MatMenuModule,
     MatSidenavModule,
+    MatExpansionModule,
+    MatTabsModule,
+    MatCheckboxModule,
+
     NgxDnDModule,
-    FusePipesModule
+    FusePipesModule,
+    ReactiveFormsModule,
+    CKEditorModule,
+    IvyCarouselModule,
+
+    PipesModule
   ],
   exports: [
     MatButtonModule,
@@ -48,8 +64,17 @@ import { FusePipesModule } from '@fuse/pipes/pipes.module';
     MatTooltipModule,
     MatMenuModule,
     MatSidenavModule,
+    MatExpansionModule,
+    MatTabsModule,
+    MatCheckboxModule,
+
     NgxDnDModule,
-    FusePipesModule
+    FusePipesModule,
+    ReactiveFormsModule,
+    CKEditorModule,
+    IvyCarouselModule,
+
+    PipesModule
   ]
 })
-export class MaterialModule { }
+export class SharedModule { }

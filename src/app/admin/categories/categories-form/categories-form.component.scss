@@ -1,0 +1,45 @@
+.form-header {
+    margin-bottom: 30px;
+}
+.category-detail {
+    width: 100%;
+    justify-content: center;
+
+    .category-detail-form {
+        width: 100%;
+    }
+}
+
+.image-upload {
+    display: flex;
+    .preview-image {
+        width: 300px;
+        height: 300px;
+    }
+    
+    #category-icon {
+        display: none;
+    }
+    
+    .category-icon-select {
+        margin-top: 10px;
+        margin-left: 20px;
+        font-size: 15px;
+        color: white;
+        padding: 10px 30px;
+        background: #f44336;
+        border: 1px solid #f44336;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    .removebtn {
+        padding: 2px 15px;
+    }
+}
+
+.submit-btn {
+    margin-top: 10px;
+    width: 150px;
+}
+

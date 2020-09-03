@@ -1,1 +1,28 @@
-<p>attributes-view works!</p>
+<mat-sidenav-container>
+
+    <div id="board">
+
+        <div fxFlex class="board-content-wrapper p-16 p-md-24">
+
+            <!-- BOARD -->
+            <div class="board-content ngx-dnd-container p-16 p-md-24" fxLayout="row"
+                 ngxDroppable="list" [model]="category.lists" (out)="onDrop($event)"
+                 [@animateStagger]="{value:'50'}">
+
+                <!-- LIST -->
+                <app-attribute-card
+                    class="scrumboard-board-list list-wrapper ngx-dnd-item"
+                    ngxDraggable
+                    *ngFor="let list of category.lists"
+                    [model]="list"
+                    [list]="list"
+                    [@animate]="{value:'*',params:{duration:'350ms',x:'100%'}}">
+                </app-attribute-card>
+                <!-- / LIST -->
+            </div>
+            <!-- / BOARD -->
+        </div>
+        <!-- primary content -->
+    </div>
+
+</mat-sidenav-container>

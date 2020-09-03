@@ -1,34 +1,16 @@
-<div class="page-layout carded fullwidth">
+<div class="page-layout simple fullwidth">
 
-    <!-- TOP BACKGROUND -->
-    <div class="top-bg accent"></div>
-    <!-- / TOP BACKGROUND -->
-
-    <!-- CENTER -->
-    <div class="center">
-
-        <!-- CONTENT HEADER -->
-        <div class="header accent p-24" fxLayout="row" fxLayoutAlign="start center">
-            <h2 class="m-0 text-center">Categories</h2>
-        </div>
-        <!-- / CONTENT HEADER -->
-
-        <!-- CONTENT CARD -->
-        <div class="content-card">
-
-            <!-- CONTENT -->
-            <div class="content p-24">
-
-                <router-outlet></router-outlet>
-
-            </div>
-            <!-- / CONTENT -->
-
-        </div>
-        <!-- / CONTENT CARD -->
-
+    <!-- HEADER -->
+    <div class="header accent p-24" fxLayout="row" fxLayoutAlign="start center">
+        <h2>Categories</h2>
     </div>
-    <!-- / CENTER -->
+    <!-- / HEADER -->
+
+    <!-- CONTENT -->
+    <div class="content p-24">
+        <router-outlet></router-outlet>
+    </div>
+    <!-- / CONTENT -->
 
 </div>
 

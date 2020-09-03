@@ -7,7 +7,7 @@ import { takeUntil } from 'rxjs/operators';
 import { FuseConfirmDialogComponent } from '@fuse/components/confirm-dialog/confirm-dialog.component';
 import { FusePerfectScrollbarDirective } from '@fuse/directives/fuse-perfect-scrollbar/fuse-perfect-scrollbar.directive';
 import { CategoriesService } from 'app/admin/_services/categories.service';
-import { Card } from '../../models/card.model';
+import { Card } from '../../../_models/card.model';
 
 @Component({
     selector: 'app-category-card',

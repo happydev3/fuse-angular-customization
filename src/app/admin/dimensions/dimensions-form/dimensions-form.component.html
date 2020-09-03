@@ -1,1 +1,12 @@
-<p>dimensions-form works!</p>
+<div class="form-header">
+    <h2>Dimension Form</h2>
+</div>
+<form [formGroup]="dimensionDetail">
+    <div class="dimension-detail">
+        <mat-form-field appearance="outline" class="dimension-detail-form">
+            <mat-label>Name</mat-label>
+            <input formControlName="name" placeholder="name" matInput />
+        </mat-form-field>
+    </div>
+    <button mat-raised-button color="accent" class="submit-btn">Save</button>
+</form>
