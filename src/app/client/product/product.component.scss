@@ -160,6 +160,7 @@ app-product {
                 justify-content: space-between;
                 margin-top: 30px;
                 margin-bottom: 30px;
+                padding: 16px;
 
                 .back-btn {
                     background: rgb(245, 124, 0);
@@ -207,6 +208,10 @@ app-product {
         display: block !important;
 
         .back-btn {
+            width: 100%;
+        }
+
+        .interested-btn {
             width: 100%;
         }
 
