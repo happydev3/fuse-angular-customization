@@ -18,6 +18,7 @@ app-dashboard {
             }
         }
 
+
         .board-list {
             z-index: 0;
             padding: 32px 0;
@@ -30,7 +31,7 @@ app-dashboard {
                 min-width: 210px;
                 min-height: 210px;
                 width: 300px;
-                height: 350px;
+                min-height: 350px;
                 padding: 24px 0;
                 margin: 16px;
                 border-radius: 8px;
@@ -50,12 +51,48 @@ app-dashboard {
                     text-align: center;
                 }
                 .border-description {
-                    padding: 10px;
+                    padding: 10px 10px 20px;
                 }
 
                 &.add-new-board {
                     background: rgba(0, 0, 0, 0.06);
                     border: 2px dashed rgba(255, 255, 255, 0.37);
+                }
+
+                .border-footer {
+                    background: gainsboro;
+                    width: 100%;
+                    padding: 10px;
+                    margin-bottom: -24px;
+                    border-bottom-right-radius: 8px;
+                    border-bottom-left-radius: 8px;
+                    display: flex;
+
+                    .category-stock {
+                        width: 40px;
+                        height: 40px;
+                        background: orange;
+                        border: 2px solid white;
+                        border-radius: 20px;
+                        font-size: 15px;
+                        color: white;
+                        display: flex;
+                        margin-top: -30px;
+
+                        h4 {
+                            margin: auto;
+                        }
+                    }
+
+                    .footer-title {
+                        width: 80%;
+                        color: white;
+                        text-align: center;
+                        h4 {
+                            margin-bottom: 0px;
+                            margin-top: 0px;
+                        }
+                    }
                 }
             }
         }
@@ -70,7 +107,7 @@ app-dashboard {
     $accent: map-get($theme, accent);
 
     // List
-    scrumboard-board-list {
+    app-dashboard {
 
         .list {
 
@@ -91,85 +128,6 @@ app-dashboard {
         }
     }
 
-    // Add list
-    scrumboard-board-add-list {
-
-        .new-list {
-            background: map-get($background, app-bar);
-
-            .new-list-form {
-
-                > input {
-                    background: map-get($background, app-bar);
-                    color: map-get($foreground, text);
-                }
-            }
-        }
-    }
-
-    // Board
-    scrumboard-board {
-
-        #board {
-
-            > .header {
-                background-color: map-get($accent, default);
-                color: map-get($accent, default-contrast);
-            }
-        }
-    }
-
-    // Add card directive
-    scrumboard-board-add-card {
-
-        .add-card-button {
-            background-color: map-get($background, app-bar);
-        }
-
-        .add-card-form-wrapper {
-            background-color: map-get($background, app-bar);
-        }
-    }
-
-    // Card
-    scrumboard-board-card {
-        background-color: map-get($background, card);
-        border-color: map-get($foreground, divider);
-
-        .list-card-details {
-
-            .list-card-badges {
-
-                .badge {
-                    background-color: rgba(0, 0, 0, 0.4);
-                    color: #FFFFFF;
-
-                    &.due-date {
-                        background-color: mat-color(mat-palette($mat-green));
-
-                        &.overdue {
-                            background-color: mat-color(mat-palette($mat-red));
-                        }
-                    }
-
-                    &.check-items {
-
-                        &.completed {
-                            background-color: mat-color(mat-palette($mat-green));
-                        }
-                    }
-                }
-            }
-        }
-
-        .list-card-footer {
-            border-top-color: map-get($foreground, divider);
-
-            .list-card-footer-item {
-                color: map-get($foreground, secondary-text);
-            }
-        }
-    }
 
     // Card dialog
     .scrumboard-card-dialog {
@@ -237,24 +195,10 @@ app-dashboard {
         }
     }
 
-    // Settings
-    scrumboard-board-settings {
-
-        .views {
-
-            .view {
-
-                > .header {
-                    border-bottom-color: map-get($foreground, divider);
-                    background: map-get($accent, default);
-                    color: map-get($accent, default-contrast);
-                }
-            }
-        }
-    }
 }
 
 @media(max-width: 767px) {
+
     .header {
 
         h1 {

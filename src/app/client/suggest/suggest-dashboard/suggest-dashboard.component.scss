@@ -1,0 +1,125 @@
+@import "src/@fuse/scss/fuse";
+@import "src/@fuse/scss/fuse";
+
+app-suggest-dashboard {
+    min-height: 100%;
+    background: aliceblue;
+
+    #boards {
+        width: 100%;
+        overflow: auto;
+        
+        -webkit-overflow-scrolling: touch;
+        // z-index: -998;
+
+        .header {
+
+            h1 {
+                font-size: 40px;
+                font-weight: 300;
+            }
+        }
+
+        .board-list {
+            z-index: 0;
+            padding: 32px 0;
+            max-height: none !important;
+
+            .board-list-item {
+                // z-index: 1;
+                background-color: white !important;
+                color: black;
+                min-width: 210px;
+                min-height: 210px;
+                width: 300px;
+                height: 350px;
+                padding: 24px 0;
+                margin: 16px;
+                border-radius: 8px;
+                cursor: pointer !important;
+                // background: rgba(0, 0, 0, 0.12);
+                transition: box-shadow 150ms ease-in;
+                cursor: pointer;
+
+                &:hover:not(.add-new-board) {
+                    @include mat-elevation(8);
+                }
+
+                .board-name {
+                    padding: 16px 32px 0 32px;
+                    font-weight: 300;
+                    font-size: 16px;
+                    text-align: center;
+                }
+                .border-description {
+                    padding: 10px;
+                }
+
+                &.add-new-board {
+                    background: rgba(0, 0, 0, 0.06);
+                    border: 2px dashed rgba(255, 255, 255, 0.37);
+                }
+            }
+        }
+
+        .footer-button {
+            width: 100%;
+            max-width: 1040px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+            margin-bottom: 30px;
+
+            .back-btn {
+                background: rgb(245, 124, 0);
+                color: white;
+            }
+        }
+    }
+}
+
+
+
+.background-image {
+    z-index: 0;
+    width: 100%;
+    position: absolute;
+    bottom: 20px;
+}
+
+@media(max-width: 767px) {
+    .header {
+        display: block !important;
+        justify-content: center;
+
+        .logo-wrapper {
+            margin-top: 20px;
+            width: 100%;
+            justify-content: center;
+            display: flex;
+        }
+
+        .header-right {
+            text-align: center;
+        }
+    }
+
+    .mobile-header {
+        margin-top: 50px !important;   
+    }
+
+    .footer-button {
+        width: 100%;
+        padding: 16px;
+        display: block !important;
+
+        .back-btn {
+            width: 100%;
+        }
+
+        .reset-btn {
+            width: 100%;
+        }
+    }
+}

@@ -1,1 +1,36 @@
-<p>suggest-dashboard works!</p>
+<div id="boards" fxLayout="column" fxLayoutAlign="start center" fxFlex fusePerfectScrollbar>
+    <img class="background-image" src='/assets/images/client/background_image@2x.png'>
+    <!-- <div class="header" fxLayout="row" fxLayoutAlign="center center" fxFlex="0 0 auto"
+        [@animate]="{value:'*',params:{delay:'100ms'}}">
+        <div class="logo-wrapper">
+            <img src="/assets/images/client/logo@2x.png" class="topbar-logo" />
+        </div>
+        <div class="header-right">
+            <h1 style="font-weight: 600; text-align: center"></h1>
+            <h3>Total Products in stock: </h3>
+        </div>
+    </div> -->
+
+    <div class="pt-44 pt-md-88 header" fxLayout="row" fxLayoutAlign="center center" fxFlex="0 0 auto"
+        [@animate]="{value:'*',params:{delay:'200ms'}}">
+        <h1 style="font-weight: 600; text-align: center">Select known product</h1>
+    </div>
+
+    <div class="board-list" fxFlex="0 0 auto" fxLayout="row wrap" fxLayoutAlign="center center"
+        [@animateStagger]="{value:'50'}">
+
+        <div class="board-list-item" *ngFor="let category of categories" fxLayout="column" fxLayoutAlign="center center"
+            [@animate]="{value:'*',params:{y:'100%'}}" [routerLink]="['/client/suggest/category/' + category.id]">
+            <img [src]="category.image" class="s-56"/>
+            <div class="board-name">{{category.name}}</div>
+            <div class="border-description">{{category.description}}</div>
+        </div>
+    </div>
+
+    <div class="footer-button">
+        <button mat-raised-button class="back-btn" [routerLink]="['/client/dashboard']">
+            <mat-icon>arrow_back</mat-icon>
+            Back To Home
+        </button>
+    </div>
+</div>
