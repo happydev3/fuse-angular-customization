@@ -16,6 +16,7 @@ import { AppStoreModule } from 'app/store/store.module';
 import { LayoutModule } from 'app/layout/layout.module';
 import { FakeDbService } from './fake-db/fake-db.service';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { SharedModule } from './shared/shared.module';
 
 const appRoutes: Routes = [
     {
@@ -62,6 +63,7 @@ const appRoutes: Routes = [
         // App modules
         LayoutModule,
         AppStoreModule,
+        SharedModule
     ],
     bootstrap   : [
         AppComponent

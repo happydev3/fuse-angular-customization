@@ -24,6 +24,10 @@ const clientRoutes: Routes = [
             {
                 path: 'product/:id',
                 loadChildren: () => import('./product/product.module').then(m => m.ProductModule)
+            },
+            {
+                path: 'suggest',
+                loadChildren: () => import('./suggest/suggest.module').then(m => m.SuggestModule)
             }
         ]
     }

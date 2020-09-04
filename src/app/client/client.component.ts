@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FuseSplashScreenService } from '@fuse/services/splash-screen.service';
 
 @Component({
   selector: 'app-client',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClientComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private _fuseSplashScreenService: FuseSplashScreenService,
+  ) { }
 
   ngOnInit(): void {
   }

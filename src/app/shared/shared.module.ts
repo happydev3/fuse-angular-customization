@@ -22,6 +22,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { IvyCarouselModule } from 'angular-responsive-carousel';
 import { PipesModule } from './pipes/pipes.module';
+// import { ErrorsModule } from './errors/errors.module';
 
 @NgModule({
   declarations: [],
@@ -50,6 +51,7 @@ import { PipesModule } from './pipes/pipes.module';
     IvyCarouselModule,
 
     PipesModule
+    // ErrorsModule
   ],
   exports: [
     MatButtonModule,
@@ -75,6 +77,7 @@ import { PipesModule } from './pipes/pipes.module';
     IvyCarouselModule,
 
     PipesModule
+    // ErrorsModule
   ]
 })
 export class SharedModule { }
